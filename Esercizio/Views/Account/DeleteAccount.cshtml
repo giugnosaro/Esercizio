@@ -1,0 +1,18 @@
+﻿@model Esercizio.Models.User
+
+<h2>Delete Account</h2>
+
+<p>Are you sure you want to delete your account, @Model.Username?</p>
+
+<form asp-action="DeleteAccount" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, delete my account</button>
+    <a asp-action="Profile" asp-route-id="@Model.Id" class="btn btn-secondary">Cancel</a>
+</form>
+
+    
+    <form asp-action="DeleteAccount">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

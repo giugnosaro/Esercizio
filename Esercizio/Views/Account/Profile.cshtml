@@ -1,0 +1,20 @@
+﻿@model Esercizio.Models.User
+
+<h2>@Model.Username's Profile</h2>
+
+<div>
+    <img src="@Model.ProfilePicture" alt="Profile Picture" class="img-thumbnail" width="150" height="150" />
+</div>
+
+<div>
+    <h4>Username: @Model.Username</h4>
+    <h4>Email: @Model.Email</h4>
+    <h4>Member Since: @Model.CreatedAt.ToString("dd MMM yyyy")</h4>
+</div>
+
+<a asp-action="UpdateProfile" asp-route-id="@Model.Id" class="btn btn-secondary">Edit Profile</a>
+<a asp-action="DeleteAccount" asp-route-id="@Model.Id" class="btn btn-danger">Delete Account</a>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
